@@ -25,14 +25,14 @@ VALUES ('Study SQL', 'Complete this exercise', now(), now(), NULL);
 
 INSERT INTO tasks (title, description) VALUES ('Study PostgreSQL', 'Read all the documentation');
 
--- SELECT title FROM tasks WHERE completed_at IS NULL;
+SELECT title FROM tasks WHERE completed_at IS NULL;
 
--- UPDATE tasks
--- SET completed_at = now()
--- WHERE title = 'Study SQL';
+UPDATE tasks
+SET completed_at = now()
+WHERE title = 'Study SQL';
 
 
--- SELECT title, description FROM tasks WHERE completed_at IS NULL;
+SELECT title, description FROM tasks WHERE completed_at IS NULL;
 
 SELECT * FROM tasks ORDER BY created_at DESC;
 
@@ -56,3 +56,5 @@ SELECT title, description FROM tasks WHERE title LIKE '%mistake%';
 
 DELETE FROM tasks WHERE title LIKE '%mistake%';
 SELECT * FROM tasks;
+
+SELECT * FROM tasks ORDER BY title ASC;
