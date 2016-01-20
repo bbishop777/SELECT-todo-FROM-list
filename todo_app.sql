@@ -31,7 +31,6 @@ INSERT INTO tasks (title, description) VALUES ('Study PostgreSQL', 'Read all the
 -- SET completed_at = now()
 -- WHERE title = 'Study SQL';
 
-SELECT * FROM tasks;
 
 -- SELECT title, description FROM tasks WHERE completed_at IS NULL;
 
@@ -40,3 +39,6 @@ SELECT * FROM tasks ORDER BY created_at DESC;
 -- select column_name,data_type
 -- from information_schema.columns
 -- where table_name = 'tasks';
+
+INSERT INTO tasks (title, description) VALUES ('mistake 1', 'a test entry');
+SELECT * FROM tasks;
