@@ -20,14 +20,18 @@ ALTER TABLE tasks ALTER COLUMN updated_at SET NOT NULL;
 ALTER TABLE tasks ALTER COLUMN updated_at SET DEFAULT now();
 
 INSERT INTO tasks (title, description, created_at, updated_at, completed_at)
-VALUES ('Study SQL', 'Complete this exercise', now(), now(), now());
+VALUES ('Study SQL', 'Complete this exercise', now(), now(), NULL);
 SELECT * FROM tasks;
 
 INSERT INTO tasks (title, description) VALUES ('Study PostgreSQL', 'Read all the documentation');
-SELECT * FROM tasks;
 
 SELECT title FROM tasks WHERE completed_at IS NULL;
 
+UPDATE tasks
+SET completed_at = now()
+WHERE title = 'Study SQL';
+
+SELECT * FROM tasks;
 
 
 -- select column_name,data_type
