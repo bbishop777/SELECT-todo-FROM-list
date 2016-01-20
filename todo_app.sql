@@ -21,19 +21,21 @@ ALTER TABLE tasks ALTER COLUMN updated_at SET DEFAULT now();
 
 INSERT INTO tasks (title, description, created_at, updated_at, completed_at)
 VALUES ('Study SQL', 'Complete this exercise', now(), now(), NULL);
-SELECT * FROM tasks;
+-- SELECT * FROM tasks;
 
 INSERT INTO tasks (title, description) VALUES ('Study PostgreSQL', 'Read all the documentation');
 
-SELECT title FROM tasks WHERE completed_at IS NULL;
+-- SELECT title FROM tasks WHERE completed_at IS NULL;
 
-UPDATE tasks
-SET completed_at = now()
-WHERE title = 'Study SQL';
+-- UPDATE tasks
+-- SET completed_at = now()
+-- WHERE title = 'Study SQL';
 
 SELECT * FROM tasks;
 
-SELECT title, description FROM tasks WHERE completed_at IS NULL;
+-- SELECT title, description FROM tasks WHERE completed_at IS NULL;
+
+SELECT * FROM tasks ORDER BY created_at DESC;
 
 -- select column_name,data_type
 -- from information_schema.columns
