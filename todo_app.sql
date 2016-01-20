@@ -1,2 +1,28 @@
+DROP USER IF EXISTS michael;
+CREATE USER michael WITH ENCRYPTED PASSWORD 'stonebreaker';
+DROP DATABASE IF EXISTS todo_app;
 CREATE DATABASE todo_app;
-DROP USER IF EXISTS 'michael';
+\c todo_app;
+DROP TABLE IF EXISTS tasks;
+CREATE TABLE tasks
+(id integer NOT NULL PRIMARY KEY,
+title character varying(255) NOT NULL,
+description text NULL,
+created_at TIMESTAMP WITHOUT TIME ZONE NOT NULL DEFAULT now(),
+updated_at TIMESTAMP WITHOUT TIME ZONE NULL,
+completed boolean NOT NULL DEFAULT false);
+ALTER TABLE tasks DROP COLUMN completed;
+ALTER TABLE tasks ADD COLUMN completed_at TIMESTAMP NULL DEFAULT NULL;
+-- Problem 8-3 where need to edit column 'updated_at'...had to do each edit on individual line
+-- here I set the the column to allow Not Null values
+ALTER TABLE tasks ALTER COLUMN updated_at SET NOT NULL;
+-- here I set the column to have DEFAULT value of now()
+ALTER TABLE tasks ALTER COLUMN updated_at SET DEFAULT now();
+
+
+
+
+
+select column_name,data_type
+from information_schema.columns
+where table_name = 'tasks';
