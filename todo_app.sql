@@ -43,4 +43,6 @@ SELECT * FROM tasks ORDER BY created_at DESC;
 INSERT INTO tasks (title, description) VALUES ('mistake 1', 'a test entry');
 
 INSERT INTO tasks (title, description) VALUES ('mistake 2', 'another test entry');
+
+INSERT INTO tasks (title, description) VALUES ('third mistake', 'another test entry');
 SELECT * FROM tasks;
