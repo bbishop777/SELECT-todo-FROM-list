@@ -33,6 +33,7 @@ WHERE title = 'Study SQL';
 
 SELECT * FROM tasks;
 
+SELECT title, description FROM tasks WHERE completed_at IS NULL;
 
 -- select column_name,data_type
 -- from information_schema.columns
