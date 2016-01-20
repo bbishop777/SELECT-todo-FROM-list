@@ -5,7 +5,7 @@ CREATE DATABASE todo_app;
 \c todo_app;
 DROP TABLE IF EXISTS tasks;
 CREATE TABLE tasks
-(id integer NOT NULL PRIMARY KEY,
+(id SERIAL NOT NULL PRIMARY KEY,
 title character varying(255) NOT NULL,
 description text NULL,
 created_at TIMESTAMP WITHOUT TIME ZONE NOT NULL DEFAULT now(),
@@ -19,10 +19,17 @@ ALTER TABLE tasks ALTER COLUMN updated_at SET NOT NULL;
 -- here I set the column to have DEFAULT value of now()
 ALTER TABLE tasks ALTER COLUMN updated_at SET DEFAULT now();
 
+INSERT INTO tasks (title, description, created_at, updated_at, completed_at)
+VALUES ('Study SQL', 'Complete this exercise', now(), now(), NULL);
+SELECT * FROM tasks;
+
+INSERT INTO tasks (title, description) VALUES ('Study SQL', 'Read all the documentation');
+SELECT * FROM tasks;
 
 
 
 
-select column_name,data_type
-from information_schema.columns
-where table_name = 'tasks';
+
+-- select column_name,data_type
+-- from information_schema.columns
+-- where table_name = 'tasks';
