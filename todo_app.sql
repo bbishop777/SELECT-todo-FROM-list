@@ -46,3 +46,5 @@ INSERT INTO tasks (title, description) VALUES ('mistake 2', 'another test entry'
 
 INSERT INTO tasks (title, description) VALUES ('third mistake', 'another test entry');
 SELECT * FROM tasks;
+
+SELECT title FROM tasks WHERE title LIKE '%mistake%';
